@@ -14,15 +14,17 @@ class SalesService extends ServiceBase
      * @param int|null    $limit
      * @param int|null    $offset
      * @param string|null $dateRange
+     * @param string|null $dateField
      *
      * @return ApiOrderResponse[]|Error
      */
-    public function getAllOrdersForCloud($cloudId, $limit = null, $offset = null, $dateRange = null)
+    public function getAllOrdersForCloud($cloudId, $limit = null, $offset = null, $dateRange = null, $dateField = null)
     {
         $params = array(
                 'limit' => $limit,
                 'offset' => $offset,
                 'dateRange' => $dateRange,
+                'dateField' => $dateField,
         );
 
         $response = $this->apiClient->sendRequest(
@@ -51,15 +53,17 @@ class SalesService extends ServiceBase
      * @param int|null    $limit
      * @param int|null    $offset
      * @param string|null $dateRange
+     * @param string|null $dateField
      *
      * @return ApiOrderResponse[]|Error
      */
-    public function getAllOrdersForBranch($cloudId, $branchId, $limit = null, $offset = null, $dateRange = null)
+    public function getAllOrdersForBranch($cloudId, $branchId, $limit = null, $offset = null, $dateRange = null, $dateField = null)
     {
         $params = array(
                 'limit' => $limit,
                 'offset' => $offset,
                 'dateRange' => $dateRange,
+                'dateField' => $dateField,
         );
 
         $response = $this->apiClient->sendRequest(
@@ -87,15 +91,17 @@ class SalesService extends ServiceBase
      * @param int|null    $limit
      * @param int|null    $offset
      * @param string|null $dateRange
+     * @param string|null $dateField
      *
      * @return Receipt[]|Error
      */
-    public function getAllReceiptsForCloud($cloudId, $limit = null, $offset = null, $dateRange = null)
+    public function getAllReceiptsForCloud($cloudId, $limit = null, $offset = null, $dateRange = null, $dateField = null)
     {
         $params = array(
                 'limit' => $limit,
                 'offset' => $offset,
                 'dateRange' => $dateRange,
+                'dateField' => $dateField,
         );
 
         $response = $this->apiClient->sendRequest(
@@ -124,15 +130,17 @@ class SalesService extends ServiceBase
      * @param int|null    $limit
      * @param int|null    $offset
      * @param string|null $dateRange
+     * @param string|null $dateField
      *
      * @return Receipt[]|Error
      */
-    public function getAllReceiptsForBranch($cloudId, $branchId, $limit = null, $offset = null, $dateRange = null)
+    public function getAllReceiptsForBranch($cloudId, $branchId, $limit = null, $offset = null, $dateRange = null, $dateField = null)
     {
         $params = array(
                 'limit' => $limit,
                 'offset' => $offset,
                 'dateRange' => $dateRange,
+                'dateField' => $dateField,
         );
 
         $response = $this->apiClient->sendRequest(
