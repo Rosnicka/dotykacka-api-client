@@ -5,6 +5,8 @@ namespace DotykackaPHPApiClient;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Uri;
 use Http\Discovery\MessageFactoryDiscovery;
+use Http\Message\MessageFactory\GuzzleMessageFactory;
+use GuzzleHttp\Client;
 
 class ApiClient
 {
@@ -39,10 +41,13 @@ class ApiClient
             $username = null,
             $password = null
     ) {
+        $guzzleClient = new Client();
         $httpClient = HttpClientFactory::create(
-                $this->OAuth2Token,
-                $username,
-                $password
+            $this->OAuth2Token,
+            $username,
+            $password,
+            [],
+            $guzzleClient
         );
 
         $uri = new Uri($this->apiBaseUrl.'/'.$path);
@@ -80,7 +85,7 @@ class ApiClient
             }
         }
 
-        $factory = MessageFactoryDiscovery::find();
+        $factory = new GuzzleMessageFactory();
         $request = $factory->createRequest(
                 $method,
                 $uri,
