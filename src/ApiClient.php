@@ -4,9 +4,8 @@ namespace DotykackaPHPApiClient;
 
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Uri;
-use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\MessageFactory\GuzzleMessageFactory;
-use GuzzleHttp\Client;
+use Http\Adapter\Guzzle6\Client;
 
 class ApiClient
 {
