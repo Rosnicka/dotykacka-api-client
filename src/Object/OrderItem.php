@@ -12,6 +12,9 @@ class OrderItem extends ObjectBase
     /** @var string */
     public $note;
 
+    /** @var int */
+    public $discount_percent;
+
     /** @var float */
     public $qty;
 
