@@ -18,6 +18,9 @@ class OrderItem extends ObjectBase
     /** @var float */
     public $qty;
 
+    /** @var float */
+    public $manual_price;
+
     /** @var string[] */
     public $tags;
 }
