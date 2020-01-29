@@ -163,6 +163,12 @@ class Product extends ObjectBase
     public $sortorder;
 
     /** @var int */
+    public $special;
+
+    /** @var string */
+    public $specialProductKey;
+
+    /** @var int */
     public $stockdeduct;
 
     /** @var string */
