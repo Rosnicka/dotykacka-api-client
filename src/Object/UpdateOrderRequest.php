@@ -20,4 +20,7 @@ class UpdateOrderRequest extends ObjectBase
 
     /** @var string */
     public $webhook;
+
+    /** @var int */
+    public $discount_percent;
 }
